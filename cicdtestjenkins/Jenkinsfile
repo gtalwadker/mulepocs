@@ -7,14 +7,14 @@ pipeline{
  	stage ('Build'){
  		steps {
  			
- 				sh 'mvn -f cicdtestjenkins/pom.xml clean install'
+ 				sh '/Users/gtalwadker/MuleSoft/apache-maven-3.6.0/bin/mvn -f cicdtestjenkins/pom.xml clean install'
  			
  		}
  	}
  	stage ('Deploy'){
  		steps {
  			
- 				sh 'mvn -f cicdtestjenkins/pom.xml package deploy  -Dusername=$ANYPOINT-LOCAL_USR -Dpassword=$ANYPOINT-LOCAL_PSW -Denvironment=DEV -DmuleDeploy'
+ 				sh '/Users/gtalwadker/MuleSoft/apache-maven-3.6.0/bin/mvn -f cicdtestjenkins/pom.xml package deploy  -Dusername=$ANYPOINT-LOCAL_USR -Dpassword=$ANYPOINT-LOCAL_PSW -Denvironment=DEV -DmuleDeploy'
  		
  		}
  	}
