@@ -1,0 +1,23 @@
+pipeline{
+ agent any
+ environment {
+    ANYPOINT = credentials('ANYPOINT-LOCAL')
+ }
+ stages {
+ 	stage ('Build'){
+ 		steps {
+ 			
+ 				sh 'mvn -f cicdtestjenkins/pom.xml clean install'
+ 			
+ 		}
+ 	}
+ 	stage ('Deploy'){
+ 		steps {
+ 			
+ 				sh 'mvn -f cicdtestjenkins/pom.xml package deploy  -Dusername=$ANYPOINT-LOCAL_USR -Dpassword=$ANYPOINT-LOCAL_PSW -Denvironment=DEV -DmuleDeploy'
+ 		
+ 		}
+ 	}
+ }
+
+}
