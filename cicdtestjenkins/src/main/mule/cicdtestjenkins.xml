@@ -4,12 +4,12 @@
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
-	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="07a08e52-6728-4787-b76c-b21c16fcd825" >
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="0faebb98-442b-4cdc-aa4d-18547a74bf9b" >
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
-	<flow name="jenkinscicdFlow" doc:id="f00561fa-1f3e-43a6-af72-aef3bf90c05f" >
-		<http:listener doc:name="Listener" doc:id="123fd9f7-1765-4356-be1a-1a38673d0119" config-ref="HTTP_Listener_config" path="/jenkinstest"/>
-		<logger level="INFO" doc:name="Logger" doc:id="9edb0788-304a-4ffb-ae16-9c5b0a568dda" message="messagee received"/>
-		<set-payload value="message Received successfully" doc:name="Set Payload" doc:id="b92d8c1e-ec23-45b7-a144-e94459fed564" />
+	<flow name="cicdtestjenkinsFlow" doc:id="f6bda29d-238a-4af4-8a5b-f2d0e3ea12fc" >
+		<http:listener doc:name="Listener" doc:id="bd6e3b98-8639-48a6-9724-97e1ae3ad791" config-ref="HTTP_Listener_config" path="/cicdtest"/>
+		<logger level="INFO" doc:name="Logger" doc:id="1350f3c8-1f0a-491c-8f12-654eb7bad14d" message="message received"/>
+		<set-payload value="message received" doc:name="Set Payload" doc:id="f79c16cf-5850-49ed-bf81-56314d1b04bb" />
 	</flow>
 </mule>
