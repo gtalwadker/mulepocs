@@ -1,7 +1,7 @@
 pipeline{
  agent any
  environment {
-    ANYPOINT = credentials('ANYPOINT-LOCAL')
+    ANYPOINT = credentials('ANYPOINT')
  }
  stages {
  	stage ('Build'){
@@ -14,7 +14,7 @@ pipeline{
  	stage ('Deploy'){
  		steps {
  			
- 				sh '/Users/gtalwadker/MuleSoft/apache-maven-3.6.0/bin/mvn -f cicdtestjenkins/pom.xml package deploy -Dusername=cicdservicesuser -Dpassword=Welcome1 -Denvironment=DEV -DmuleDeploy'
+ 				sh '/Users/gtalwadker/MuleSoft/apache-maven-3.6.0/bin/mvn -f cicdtestjenkins/pom.xml package deploy -Dusername=$ANYPOINT_USR -Dpassword=$ANYPOINT_PSW -Denvironment=DEV -DmuleDeploy'
  		
  		}
  	}
