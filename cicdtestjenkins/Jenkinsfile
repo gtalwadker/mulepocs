@@ -14,7 +14,7 @@ pipeline{
  	stage ('Deploy'){
  		steps {
  			
- 				sh '/Users/gtalwadker/MuleSoft/apache-maven-3.6.0/bin/mvn -f cicdtestjenkins/pom.xml package deploy  -Dusername=$ANYPOINT-LOCAL_USR -Dpassword=$ANYPOINT-LOCAL_PSW -Denvironment=DEV -DmuleDeploy'
+ 				sh '/Users/gtalwadker/MuleSoft/apache-maven-3.6.0/bin/mvn -f cicdtestjenkins/pom.xml package deploy -Dusername=cicdservicesuser -Dpassword=Welcome1 -Denvironment=DEV -DmuleDeploy'
  		
  		}
  	}
