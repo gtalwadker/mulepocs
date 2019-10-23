@@ -11,31 +11,9 @@ pipeline{
  			
  		}
  	}
- 	stage ('DEV Deployment'){
- 		steps {
- 			
- 				sh '/Users/gtalwadker/MuleSoft/apache-maven-3.6.0/bin/mvn -f cicdtestpub-jfrog/pom.xml package deploy -Dusername=$ANYPOINT_USR -Dpassword=$ANYPOINT_PSW -Denvironment=DEV -DmuleDeploy'
- 		
- 		}
- 	}
+
  	
- 		stage ('TEST Deployment'){
- 		steps {
- 			
- 				sh '/Users/gtalwadker/MuleSoft/apache-maven-3.6.0/bin/mvn -f cicdtestpub-jfrog/pom.xml package deploy -Dusername=$ANYPOINT_USR -Dpassword=$ANYPOINT_PSW -Denvironment=TEST -DmuleDeploy'
- 		
- 		}
- 	}
- 	
- 		stage ('UAT Deployment'){
- 		steps {
- 			
- 				sh '/Users/gtalwadker/MuleSoft/apache-maven-3.6.0/bin/mvn -f cicdtestpub-jfrog/pom.xml package deploy -Dusername=$ANYPOINT_USR -Dpassword=$ANYPOINT_PSW -Denvironment=UAT -DmuleDeploy'
- 		
- 		}
- 	}
- 	
- 	 		stage ('Publish Artifacts'){
+ 	 		stage ('Publish Built Artifacts'){
  		steps {
  			
  				sh '/Users/gtalwadker/MuleSoft/apache-maven-3.6.0/bin/mvn -f cicdtestpub-jfrog/pom.xml package deploy'
