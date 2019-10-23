@@ -10,6 +10,6 @@ http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/cu
 	</http:listener-config>
 	<flow name="cicdtestjfrogFlow" doc:id="961ac70a-bb75-49ff-b3c7-9ca66393662c" >
 		<http:listener doc:name="Listener" doc:id="fb6bdec5-f3a8-4314-933c-d769bf406ef8" config-ref="HTTP_Listener_config" path="/testjfrogrepo"/>
-		<logger level="INFO" doc:name="Logger" doc:id="35aa5185-e764-412f-8d9a-4b865a7da708" message="test jfrog repo 1"/>
+		<logger level="INFO" doc:name="Logger" doc:id="35aa5185-e764-412f-8d9a-4b865a7da708" message="test jfrog repo 2"/>
 	</flow>
 </mule>
