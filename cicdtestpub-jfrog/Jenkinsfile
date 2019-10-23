@@ -1,0 +1,39 @@
+pipeline{
+ agent any
+ environment {
+    ANYPOINT = credentials('ANYPOINT')
+ }
+ stages {
+ 	stage ('Build'){
+ 		steps {
+ 			
+ 				sh '/Users/gtalwadker/MuleSoft/apache-maven-3.6.0/bin/mvn -f cicdtestjfrog/pom.xml clean install'
+ 			
+ 		}
+ 	}
+ 	stage ('DEV Deployment'){
+ 		steps {
+ 			
+ 				sh '/Users/gtalwadker/MuleSoft/apache-maven-3.6.0/bin/mvn -f cicdtestjfrog/pom.xml package deploy -Dusername=$ANYPOINT_USR -Dpassword=$ANYPOINT_PSW -Denvironment=DEV -DmuleDeploy'
+ 		
+ 		}
+ 	}
+ 	
+ 		stage ('TEST Deployment'){
+ 		steps {
+ 			
+ 				sh '/Users/gtalwadker/MuleSoft/apache-maven-3.6.0/bin/mvn -f cicdtestjfrog/pom.xml package deploy -Dusername=$ANYPOINT_USR -Dpassword=$ANYPOINT_PSW -Denvironment=TEST -DmuleDeploy'
+ 		
+ 		}
+ 	}
+ 	
+ 		stage ('UAT Deployment'){
+ 		steps {
+ 			
+ 				sh '/Users/gtalwadker/MuleSoft/apache-maven-3.6.0/bin/mvn -f cicdtestjenkins/pom.xml package deploy -Dusername=$ANYPOINT_USR -Dpassword=$ANYPOINT_PSW -Denvironment=UAT -DmuleDeploy'
+ 		
+ 		}
+ 	}
+ }
+
+}
