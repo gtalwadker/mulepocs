@@ -9,7 +9,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	</http:listener-config>
 	<flow name="cicdtestjenkinsFlow" doc:id="f6bda29d-238a-4af4-8a5b-f2d0e3ea12fc" >
 		<http:listener doc:name="Listener" doc:id="bd6e3b98-8639-48a6-9724-97e1ae3ad791" config-ref="HTTP_Listener_config" path="/cicdtest"/>
-		<logger level="INFO" doc:name="Logger" doc:id="1350f3c8-1f0a-491c-8f12-654eb7bad14d" message="message received 14"/>
+		<logger level="INFO" doc:name="Logger" doc:id="1350f3c8-1f0a-491c-8f12-654eb7bad14d" message="message received 15"/>
 		<set-payload value="message received" doc:name="Set Payload" doc:id="f79c16cf-5850-49ed-bf81-56314d1b04bb" />
 	</flow>
 </mule>
