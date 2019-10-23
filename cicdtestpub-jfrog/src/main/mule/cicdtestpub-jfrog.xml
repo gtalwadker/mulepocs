@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="280923de-a38c-43ce-8af1-43360b0d1735" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="cicdtestpub-jfrogFlow" doc:id="29af63cd-964e-4732-9545-94deb820ae9e" >
+		<http:listener doc:name="Listener" doc:id="ad5df49b-b891-4ab3-96bf-7e897f8e3645" config-ref="HTTP_Listener_config" path="/jfrogpub"/>
+		<logger level="INFO" doc:name="Logger" doc:id="621d8558-ed9d-403e-a6c4-ebb4c4d8120c" message="jfrog pub test"/>
+	</flow>
+</mule>
