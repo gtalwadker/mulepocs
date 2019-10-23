@@ -55,4 +55,11 @@
         </repository>
     </repositories>
 
+     <distributionManagement> 
+     	<repository> 
+     	<id>pacjfrogrepo-publish</id> 
+     	<url>http://localhost:8081/artifactory/pac-intermediate-artifacts/</url> 
+     	</repository> 
+     </distributionManagement>
+
 </project>
